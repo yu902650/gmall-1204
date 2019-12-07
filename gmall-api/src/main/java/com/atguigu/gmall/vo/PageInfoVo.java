@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -18,7 +19,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel
-public class PageInfoVo {
+public class PageInfoVo implements Serializable {
+    private static final long serialVersionUID = 1601619699219218004L;
     @ApiModelProperty("总记录数")
     private Long total;
 

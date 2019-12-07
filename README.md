@@ -106,4 +106,3 @@ logstash-plugin install logstash-codec-json_lines
 可以将修改好的容器制作为镜像，方便下次使用（也可直接推送到镜像仓库）；
 docker commit logstash logstash_gmall:0.0.1
 
-

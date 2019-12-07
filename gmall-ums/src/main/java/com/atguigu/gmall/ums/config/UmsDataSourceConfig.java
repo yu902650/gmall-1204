@@ -1,5 +1,6 @@
 package com.atguigu.gmall.ums.config;
 
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import io.shardingjdbc.core.api.MasterSlaveDataSourceFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,5 +26,14 @@ public class UmsDataSourceConfig {
         File file = ResourceUtils.getFile("classpath:sharding-jdbc.yml");
         DataSource dataSource = MasterSlaveDataSourceFactory.createDataSource(file);
         return dataSource;
+    }
+
+    /**
+     * 分页插件
+     * @return
+     */
+    @Bean
+    public PaginationInterceptor paginationInterceptor(){
+        return new PaginationInterceptor();
     }
 }
